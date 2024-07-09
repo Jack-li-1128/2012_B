@@ -13,8 +13,8 @@ opening_top_edge = 2800
 # Solar panel dimensions
 main_panel_length = 1956
 main_panel_width = 991
-additional_panel_length = 1580
-additional_panel_width = 808
+additional_panel_length = 1300
+additional_panel_width = 1100
 smaller_panel_length = 310
 smaller_panel_width = 355
 
