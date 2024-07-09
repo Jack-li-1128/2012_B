@@ -11,12 +11,10 @@ opening_left_edge = 1383.7
 opening_top_edge = 2800
 
 # Solar panel dimensions
-main_panel_length = 1482
-main_panel_width = 992
-
-additional_panel_length = 1482
-additional_panel_width = 992
-
+main_panel_length = 1956
+main_panel_width = 991
+additional_panel_length = 1580
+additional_panel_width = 808
 smaller_panel_length = 310
 smaller_panel_width = 355
 
@@ -78,7 +76,7 @@ def draw_smaller_panels_in_range(ax, start_width, end_width, panel_length, panel
                      opening_top_edge < y + panel_width and
                      y < opening_top_edge + opening_width) and
                 not any((x < p[0] + p[2] and x + panel_length > p[0] and y < p[1] + p[3] and y + panel_width > p[1]) for p in existing_panels)):
-                ax.add_patch(patches.Rectangle((x, y), panel_length, panel_width, edgecolor=color, facecolor='none', linewidth=1))
+                ax.add_patch(patches.Rectangle((x, y), panel_length, panel_width, edgecolor=color, facecolor='none', linewidth=1, linestyle='dotted'))
                 existing_panels.append((x, y, panel_length, panel_width))
                 panel_count += 1
     return panel_count, existing_panels
@@ -97,4 +95,11 @@ ax.set_ylabel('Width (mm)')
 plt.gca().invert_yaxis()
 plt.show()
 
-main_panel_count, additional_panel_count, smaller_panel_count, range_panel_count
+# Print the number of panels of each type
+print(f"Number of 1580 mm × 800 mm panels: {main_panel_count}")
+print(f"Number of 1321 mm × 711 mm panels: {additional_panel_count}")
+
+# Total number of smaller panels including the ones in the specified range
+total_smaller_panels = smaller_panel_count + range_panel_count
+print(f"Number of 310 mm × 355 mm panels: {total_smaller_panels}")
+
