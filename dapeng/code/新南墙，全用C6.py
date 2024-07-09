@@ -15,12 +15,8 @@ excluded_rectangles = [
 excluded_circle = (850 + 900, 600 + 900, 1250)  # left circle region (center_x, center_y, radius)
 
 # Solar panel dimensions
-main_panel_length = 1956  # mm
-main_panel_width = 991    # mm
-additional_panel_length = 1580  # mm
-additional_panel_width = 808    # mm
-smaller_panel_length = 310  # mm
-smaller_panel_width = 355   # mm
+panel_length = 310  # mm
+panel_width = 355   # mm
 
 # Create a new figure for the wall layout
 fig, ax = plt.subplots(figsize=(15, 5))
@@ -64,14 +60,8 @@ def draw_panels(ax, panel_length, panel_width, color, wall_width, wall_height, e
 # Store positions of existing panels to avoid overlap
 existing_panels = []
 
-# Draw main panels
-main_panel_count, existing_panels = draw_panels(ax, main_panel_length, main_panel_width, 'blue', wall_width, wall_height, excluded_rectangles, excluded_circle, existing_panels)
-
-# Draw additional panels
-additional_panel_count, existing_panels = draw_panels(ax, additional_panel_length, additional_panel_width, 'green', wall_width, wall_height, excluded_rectangles, excluded_circle, existing_panels)
-
-# Draw smaller panels
-smaller_panel_count, existing_panels = draw_panels(ax, smaller_panel_length, smaller_panel_width, 'purple', wall_width, wall_height, excluded_rectangles, excluded_circle, existing_panels)
+# Draw panels
+panel_count, existing_panels = draw_panels(ax, panel_length, panel_width, 'purple', wall_width, wall_height, excluded_rectangles, excluded_circle, existing_panels)
 
 # Set limits and labels
 ax.set_xlim(0, wall_width)
@@ -80,11 +70,9 @@ ax.set_aspect('equal')
 ax.set_title('Optimized Solar Panel Layout on Wall')
 ax.set_xlabel('Length (mm)')
 ax.set_ylabel('Height (mm)')
+ax.invert_yaxis()
 
-plt.gca().invert_yaxis()
 plt.show()
 
-# Print the number of panels of each type
-print(f"_B2_{main_panel_count}")
-print(f"_A3_{additional_panel_count}")
-print(f"_C6_{smaller_panel_count}")
+# Print the number of panels
+print(f"Number of 310 mm × 355 mm panels: {panel_count}")

@@ -44,17 +44,15 @@
     \renewcommand{\abstractname}{\Large 摘要\\}
     \begin{abstract}
         \normalsize
-        本文针对太阳能小屋设计问题，建立了
+        本文针对太阳能小屋设计问题，建立了多种优化模型。
         
-        针对问题一，为达到最高收益，最优的太阳能电池板选择，墙面选择，铺设方式选择与变压器选择，最终得到了最高的发电量，与最大经济效益。
+        针对问题一，为达到最高收益，进行数据预处理，对光能进行积分以解决辐射量的计算问题，接下来分别计算每种电池板在每个墙面的收益，以最优的太阳能电池板铺设方式，包含墙面选择与铺设方式选择。然后进行串并联连接方式与变压器选择，最终得到了最高的发电量，与最大经济效益。
         
         针对问题二，
         
         针对问题三，
         
-        针对问题四，
-        
-        \textbf{关键字}：
+        \textbf{关键字}：优化
     \end{abstract}
     \newpage
 % 重新设置页面边距
@@ -77,17 +75,19 @@
     \section{问题分析}
     \subsection{问题一分析}
     对于问题一进行数据预处理，为了达成年太阳能光伏发电总量尽可能大，而单位发电量的费用尽可能小这两个目标，我们一步步地对
+
+	因为附件4所给大同典型气象年气象数据为离散型数据
     \subsection{问题二分析}
-    首先通过，设计相应的架空方式
+    首先通过，设计相应的架空方式，确保最大的全年太阳能光伏发电总量，以获取更多的收益。
     \subsection{问题三分析}
-    对于该问题，首先需要建立，需要设计接收阳光最优化的房子
+    对于该问题，首先需要建立，需要设计接收阳光最优化的房子。基于太阳辐射，选择最优的房屋朝向角度及建筑设计。
 
     \section{模型假设}
     \begin{enumerate}[(1)]
         \item 在时间分布上，辐射度是连续的。
-        \item 太阳
+        \item 每年太阳辐射量基本不变。
         \item 基于
-        \item 假设
+        \item 假设电池板不能重叠，且不能超出可用铺设区域。
     \end{enumerate}
 
     \section{符号说明}
@@ -125,18 +125,49 @@
 
     为解决太阳能电池板排布问题，建立了
 
-    为解决变压器问题，
+    为解决变压器问题，优化出最低价格的变压器使用策略。
     
 
     
     \subsubsection{数据预处理}
-    拟合
-    \subsubsection{最优太阳能电池板排布问题}
+    为了避免夜晚数据为0影响多项式拟合，首先剔除辐射强度为0的数据。
 
+	接下来进行多项式拟合，拟合效果如下图所示。
+
+
+
+	\begin{figure}[H] % [H] 表示强制当前位置插入图片
+        \centering % 使图片居中
+        \includegraphics[width=0.8\textwidth]{"F:/Git/2012_B/papers/paper picture/good.png"} % 图片文件名及宽度调整
+        \caption{这是一个图片示例} % 图片标题
+        \label{fig:example} % 图片标签
+    \end{figure}
+    发现图线基本经过每一个离散点，证明拟合结果优良。
+	\subsubsection{计算辐射量}
+	利用积分，得出更加准确的辐射量。
+
+    \subsubsection{最优太阳能电池板排布问题}
+获得全年太阳能光伏发电总量尽可能大的前提是墙面获得最高的空间利用率。为此我们设计了一套算法。
+
+\begin{itemize}
+    \item $n_i$ 表示第 $i$ 种电池板的数量。
+    \item $A_i$ 表示第 $i$ 种电池板的面积。
+\end{itemize}
+
+目标函数可以表示为：
+\[
+\max \left( \sum_{i} A_i \cdot n_i \right)
+\]
+
+
+1.使用嵌套循环在墙面区域内按一定间隔（电池板的长度和宽度）进行检查，尝试铺设电池板。
+
+2.对每个可能的位置，检查电池板是否与排除区域重叠。
+
+3.如果电池板位置有效（不重叠排除区域和其他已铺设电池板），则将其添加到布局中。
     \begin{figure}[H] % [H] 表示强制当前位置插入图片
         \centering % 使图片居中
-        \includegraphics[width=0.8\textwidth]{"south_top_B2_21_C1_2_C6_63.png"
-} % 图片文件名及宽度调整
+        \includegraphics[width=0.8\textwidth]{"F:/Git/2012_B/papers/paper picture/south_top_B2_21_C1_2_C6_63.png"} % 图片文件名及宽度调整
         \caption{这是一个图片示例} % 图片标题
         \label{fig:example} % 图片标签
     \end{figure}
@@ -148,24 +179,25 @@
         \label{fig:example} % 图片标签
     \end{figure}
 
-    \subsubsection{计算辐射量}
+
     
     \subsubsection{结果的检验}
     \subsubsection{问题的结论}
     \subsection{问题二模型的建立与求解}
     
     \subsubsection{某某模型的建立与求解}
+
+    \subsubsection{结果的检验}
+    \subsubsection{问题的结论}
     \subsection{问题三模型的建立与求解}
+    \subsubsection{模型的建立}
     \subsubsection{模型的求解}
-    
-    \subsection{问题四模型的建立与求解}
-    \subsubsection{问题四模型的建立}
-    \subsubsection{问题四模型的求解}
-            
+    \subsubsection{结果的检验}
+    \subsubsection{问题的结论}
     \section{模型评价与改进}
     \subsection{模型优点}
     \begin{enumerate}[(1)]
-        \item 对
+        \item 针对第一问中，将原有的离散数据转为连续数据，在计算太阳光辐射时可以更加精确。
         \item 采用算法
     \end{enumerate}
     \subsection{模型缺点}
