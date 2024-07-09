@@ -11,7 +11,7 @@ opening_left_edge = 1383.7
 opening_top_edge = 2800
 
 # Solar panel dimensions
-main_panel_length = 1956
+main_panel_length = 1650
 main_panel_width = 991
 additional_panel_length = 1300
 additional_panel_width = 1100
@@ -91,15 +91,15 @@ ax.set_aspect('equal')
 ax.set_title('Optimized Solar Panel Layout on Roof')
 ax.set_xlabel('Length (mm)')
 ax.set_ylabel('Width (mm)')
-
-plt.gca().invert_yaxis()
-plt.show()
-
 # Print the number of panels of each type
-print(f"Number of 1580 mm × 800 mm panels: {main_panel_count}")
-print(f"Number of 1321 mm × 711 mm panels: {additional_panel_count}")
-
+s = f"_B1_{main_panel_count}"
+s += f"_C1_{additional_panel_count}"
 # Total number of smaller panels including the ones in the specified range
 total_smaller_panels = smaller_panel_count + range_panel_count
-print(f"Number of 310 mm × 355 mm panels: {total_smaller_panels}")
+s += f"_C6_{total_smaller_panels}"
+plt.gca().invert_yaxis()
+plt.savefig('F:\\Git\\2012_B\\dapeng\\图片生成\\'+s)
+plt.show()
+
+
 
