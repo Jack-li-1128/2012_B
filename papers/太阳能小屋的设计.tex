@@ -1,0 +1,187 @@
+\documentclass{ctexart}
+
+\usepackage{appendix}
+\usepackage{listings}% 插入代码
+\usepackage{xcolor} 
+\usepackage{graphicx}% 插入表格/图片
+\usepackage{booktabs} % 绘制表格
+\usepackage{caption} % 标题
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{subfigure} % 插入图片
+\usepackage{longtable}
+\usepackage{abstract}% 摘要
+\pagestyle{plain} % 页眉消失
+\usepackage{setspace}
+\usepackage{multirow}% 表格
+\usepackage{diagbox}
+\usepackage{enumerate}% 序号
+\usepackage{float}% 固定图片或表格的位置
+\usepackage{gensymb}
+\usepackage{microtype}
+
+\geometry{a4paper,left=2.5cm,right=2.5cm,top=2cm,bottom=2cm}% 页边距
+\lstset{
+    numbers=left, % 设置行号位置
+    numberstyle=\tiny, % 设置行号大小
+    keywordstyle=\color{blue}, % 设置关键字颜色
+    commentstyle=\color[cmyk]{1,0,1,0}, % 设置注释颜色
+    escapeinside=``, % 逃逸字符(1左面的键)，用于显示中文
+    breaklines, % 自动折行
+    extendedchars=false, % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+    xleftmargin=1em,xrightmargin=1em, aboveskip=1em, % 设置边距
+    tabsize=4, % 设置tab空格数
+    showspaces=false % 不显示空格
+}
+
+\title{太阳能小屋的设计}
+\date{}
+\author{}
+
+\begin{document}
+    \maketitle
+    \renewcommand{\abstractname}{\Large 摘要\\}
+    \begin{abstract}
+        \normalsize
+        本文针对太阳能小屋设计问题，建立了
+        
+        针对问题一，为达到最高收益，最优的太阳能电池板选择，墙面选择，铺设方式选择与变压器选择，最终得到了最高的发电量，与最大经济效益。
+        
+        针对问题二，
+        
+        针对问题三，
+        
+        针对问题四，
+        
+        \textbf{关键字}：
+    \end{abstract}
+    \newpage
+% 重新设置页面边距
+    \newgeometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+	\section{问题背景与重述}
+	\subsection{问题背景}
+    在设计太阳能小屋时，需在建筑物外表面（屋顶及外墙）铺设光伏电池，光伏电池组件所产生的直流电需要经过逆变器转换成220V交流电才能供家庭使用，并将剩余电量输入电网。不同种类的光伏电池每峰瓦的价格差别很大，且每峰瓦的实际发电效率或发电量还受诸多因素的影响，如太阳辐射强度、光线入射角、环境、建筑物所处的地理纬度、地区的气候与气象条件、安装部位及方式（贴附或架空）等。因此，在太阳能小屋的设计中，研究光伏电池在小屋外表面的优化铺设是很重要的问题。
+    
+    在求解每个问题时，都要求配有图示，给出小屋各外表面电池组件铺设分组阵列图形及组件连接方式（串、并联）示意图，也要给出电池组件分组阵列容量及选配逆变器规格列表。在同一表面采用两种或两种以上类型的光伏电池组件时，同一型号的电池板可串联，而不同型号的电池板不可串联。在不同表面上，即使是相同型号的电池也不能进行串、并联连接。应注意分组连接方式及逆变器的选配。
+    
+    根据附件 1 提供的信息，附件 2 和附件 3 提供的，以及附件 4 提供的，可以建立数学模型解决以下问题：
+    
+    \subsection{问题表述}
+    \begin{enumerate}[(1)]
+        \item 问题一：请根据山西省大同市的气象数据，仅考虑贴附安装方式，选定光伏电池组件，对小屋（见附件2）的部分外表面进行铺设，并根据电池组件分组数量和容量，选配相应的逆变器的容量和数量。
+        \item 问题二：电池板的朝向与倾角均会影响到光伏电池的工作效率，请选择架空方式安装光伏电池，重新考虑问题1。
+        \item 问题三：根据附件7给出的小屋建筑要求，请为大同市重新设计一个小屋，要求画出小屋的外形图，并对所设计小屋的外表面优化铺设光伏电池，给出铺设及分组连接方式，选配逆变器，计算相应结果。
+    \end{enumerate}
+
+    \section{问题分析}
+    \subsection{问题一分析}
+    对于问题一进行数据预处理，为了达成年太阳能光伏发电总量尽可能大，而单位发电量的费用尽可能小这两个目标，我们一步步地对
+    \subsection{问题二分析}
+    首先通过，设计相应的架空方式
+    \subsection{问题三分析}
+    对于该问题，首先需要建立，需要设计接收阳光最优化的房子
+
+    \section{模型假设}
+    \begin{enumerate}[(1)]
+        \item 在时间分布上，辐射度是连续的。
+        \item 太阳
+        \item 基于
+        \item 假设
+    \end{enumerate}
+
+    \section{符号说明}
+    \begin{center}
+        \setlength{\tabcolsep}{9mm}{
+            \begin{tabular}{ccc}
+                \toprule  % 添加表格头部粗线。
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \midrule  % 添加表格中横线
+                \textbf{K} & \textbf{聚类类别数} & \textbf{}\\
+                \textbf{W} & \textbf{意义} & \textbf{单位}\\
+                \textbf{i} & \textbf{意义} & \textbf{}\\
+                \textbf{j} & \textbf{意义} & \textbf{}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \textbf{符号} & \textbf{意义} & \textbf{单位}\\
+                \bottomrule % 添加表格底部粗线
+        \end{tabular}}
+    \end{center}
+
+    \section{模型建立与求解}
+    \subsection{问题一模型的建立与求解}
+    因为
+    \subsubsection{问题一模型的建立}
+    针对
+
+    
+    为解决辐射量的计算问题，对光能进行积分
+    
+    为解决最优太阳能电池板问题，
+
+    为解决太阳能电池板排布问题，建立了
+
+    为解决变压器问题，
+    
+
+    
+    \subsubsection{数据预处理}
+    拟合
+    \subsubsection{最优太阳能电池板排布问题}
+
+    \begin{figure}[H] % [H] 表示强制当前位置插入图片
+        \centering % 使图片居中
+        \includegraphics[width=0.8\textwidth]{"south_top_B2_21_C1_2_C6_63.png"
+} % 图片文件名及宽度调整
+        \caption{这是一个图片示例} % 图片标题
+        \label{fig:example} % 图片标签
+    \end{figure}
+
+    \begin{figure}[H] % [H] 表示强制当前位置插入图片
+        \centering % 使图片居中
+        \includegraphics[width=0.5\textwidth]{example-image-a} % 图片文件名及宽度调整
+        \caption{这是一个图片示例} % 图片标题
+        \label{fig:example} % 图片标签
+    \end{figure}
+
+    \subsubsection{计算辐射量}
+    
+    \subsubsection{结果的检验}
+    \subsubsection{问题的结论}
+    \subsection{问题二模型的建立与求解}
+    
+    \subsubsection{某某模型的建立与求解}
+    \subsection{问题三模型的建立与求解}
+    \subsubsection{模型的求解}
+    
+    \subsection{问题四模型的建立与求解}
+    \subsubsection{问题四模型的建立}
+    \subsubsection{问题四模型的求解}
+            
+    \section{模型评价与改进}
+    \subsection{模型优点}
+    \begin{enumerate}[(1)]
+        \item 对
+        \item 采用算法
+    \end{enumerate}
+    \subsection{模型缺点}
+    \begin{enumerate}[(1)]
+        \item 问题一中
+        \item 结果
+    \end{enumerate}
+
+    \begin{thebibliography}{9} % 参考文献
+		\bibitem{bib:8}何晓群.多元统计分析.北京：中国人民大学出版社，2012.
+		\bibitem{bib:9}徐维超. 相关系数研究综述[J]. 广东工业大学学报,2012,29(3):12-17.
+    \end{thebibliography}
+    
+    \newpage
+    \section{附录}
+    %插入代码内容
+    \begin{lstlisting}
+    \end{lstlisting}
+\end{document}       
